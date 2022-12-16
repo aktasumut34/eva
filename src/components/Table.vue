@@ -77,13 +77,6 @@ watch(selectedDays, () => {
                     class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 w-1/6"
                   >
                     <div class="flex flex-col items-end">
-                      <span>
-                        {{
-                          new Date(
-                            dailySalesSkuListStore.salesDate
-                          ).toLocaleDateString("en-US", { weekday: "long" })
-                        }}
-                      </span>
                       <span>{{ dailySalesSkuListStore.salesDate }}</span>
                       <span>Sales / Units</span>
                       <span>Avg. Selling Price</span>
@@ -95,13 +88,6 @@ watch(selectedDays, () => {
                     class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 w-1/6"
                   >
                     <div class="flex flex-col items-end">
-                      <span>
-                        {{
-                          new Date(
-                            dailySalesSkuListStore.salesDate2
-                          ).toLocaleDateString("en-US", { weekday: "long" })
-                        }}
-                      </span>
                       <span>{{ dailySalesSkuListStore.salesDate2 }}</span>
                       <span>Sales / Units</span>
                       <span>Avg. Selling Price</span>
