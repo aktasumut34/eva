@@ -5,18 +5,29 @@ import {
   type DailySalesOverviewAPIOptions,
 } from "../types/dailySales";
 
+type Loading = {
+  isLoading: boolean;
+};
+
 export const useDailySalesStore = defineStore("dailySales", {
-  state: (): DailySalesOverviewAPIResponse & DailySalesOverviewAPIOptions => ({
+  state: (): DailySalesOverviewAPIResponse &
+    DailySalesOverviewAPIOptions &
+    Loading => ({
     Currency: "",
     item: [],
     isYoyExist: false,
-    day: 30,
+    day: 7,
+    isLoading: false,
   }),
   actions: {
+    setDay(day: number) {
+      this.day = day;
+    },
     async fetchDailySalesOverview() {
       const { user, token } = useAuthStore();
       if (!token) return;
       try {
+        this.isLoading = true;
         const response = await fetch(
           import.meta.env.VITE_API_URL + "/data/daily-sales-overview",
           {
@@ -37,7 +48,7 @@ export const useDailySalesStore = defineStore("dailySales", {
         this.Currency = data.Currency;
         this.item = data.item;
         this.isYoyExist = data.isYoyExist;
-        console.log(data);
+        this.isLoading = false;
       } catch (error) {
         console.log(error);
       }

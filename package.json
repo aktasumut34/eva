@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.6",
+    "@heroicons/vue": "^2.0.13",
     "highcharts": "^10.3.2",
+    "highcharts-vue": "^1.4.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45"
   },

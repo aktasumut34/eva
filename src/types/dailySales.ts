@@ -5,19 +5,29 @@ export interface DailySalesOverviewAPIResponse {
 }
 
 export interface Item {
-  date: string;
+  acos: number;
+  advertisingCost: number;
   amount: number;
-  orderCount: number;
-  unitCount: number;
+  avgAdvertisingCostPrev30Days: number;
+  avgProfitPrev30Days: number;
   avgSalesPrev30Days: number;
-  prevYearDate: string;
+  date: string;
+  fbaAmount: number;
+  fbaShippingAmount: number;
+  fbmAmount: number;
+  fbmShippingAmount: number;
+  orderCount: number;
   prevYearAmount: number;
+  prevYearAvgSalesPrev30Days: number;
+  prevYearDate: number;
+  prevYearFbaAmount: number;
+  prevYearFbmAmount: number;
   prevYearOrderCount: number;
   prevYearUnitCount: number;
-  prevYearAvgSalesPrev30Days: number;
   profit: number;
+  shippingAmount: number;
+  unitCount: number;
   yoy30DailySalesGrowth: number;
-  acos: number;
 }
 
 export interface DailySalesOverviewAPIOptions {
